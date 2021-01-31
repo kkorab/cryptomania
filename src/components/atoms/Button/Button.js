@@ -8,12 +8,19 @@ const StyledButton = styled.button`
     thin ? theme.fontWeights.regular : theme.fontWeights.bold};
   background: ${({ theme }) => theme.btnColors.primary};
   border: none;
-  border-radius: 50px;
+  border-radius: ${({ theme, formBtn }) =>
+    formBtn ? theme.borderRadius.xtraSmall : theme.borderRadius.rounded};
   outline: none;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: 0.3s all;
+  opacity: 0.9;
+
+  &:hover {
+    opacity: 1;
+  }
 
   & svg {
     margin-right: 0.5rem;

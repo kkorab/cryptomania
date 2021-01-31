@@ -50,7 +50,6 @@ const iconStyles = {
 
 const UserBar = () => {
   let { pathname } = useLocation();
-  console.log(pathname);
   return (
     pathname !== '/' && (
       <PageWrapper>

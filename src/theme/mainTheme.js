@@ -2,10 +2,9 @@ const mainTheme = {
   fonts: {
     mainFont: `'PT Sans', sans-serif`,
   },
-  bgColors: {
-    main: '#fof5ff',
-    secondary: '#ffffff',
-    tertiary: '#dde6f9',
+  fontWeights: {
+    regular: 400,
+    bold: 700,
   },
   fontSizes: {
     xxs: '1rem',
@@ -22,17 +21,30 @@ const mainTheme = {
     white: '#efefef',
     primary: '#613aea',
   },
+  bgColors: {
+    main: '#fof5ff',
+    secondary: '#ffffff',
+    tertiary: '#dde6f9',
+  },
   btnColors: {
     primary: '#613aea',
   },
   borderRadius: {
+    xtraSmall: '5px',
     small: '10px',
     regular: '20px',
     large: '30px',
+    rounded: '50px',
   },
-  fontWeights: {
-    regular: 400,
-    bold: 700,
+  textShadow: {
+    regular: '1px 0px 3px rgba(150, 150, 150, 0.5)',
+  },
+  spaces: {
+    s: '1rem',
+    m: '1.5rem',
+    l: '2rem',
+    xl: '3rem',
+    xxl: '4rem',
   },
 };
 
