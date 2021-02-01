@@ -1,9 +1,9 @@
-import { PageWrapper } from 'components/atoms';
 import React from 'react';
+import { PageHeadline, PageWrapper } from 'components/atoms';
 
 const Activities = () => (
   <PageWrapper>
-    <h1>Hello from Activities</h1>
+    <PageHeadline>Activities</PageHeadline>
   </PageWrapper>
 );
 

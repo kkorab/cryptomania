@@ -1,9 +1,9 @@
-import { PageWrapper } from 'components/atoms';
 import React from 'react';
+import { PageHeadline, PageWrapper } from 'components/atoms';
 
 const Payments = () => (
   <PageWrapper>
-    <h1>Hello from Payments</h1>
+    <PageHeadline>Payments</PageHeadline>
   </PageWrapper>
 );
 

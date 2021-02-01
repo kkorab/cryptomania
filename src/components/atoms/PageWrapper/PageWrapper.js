@@ -7,22 +7,23 @@ const StyledPageWrapper = styled.div`
   grid-template-columns: 200px 1fr;
 `;
 
-const StyledEmpyDiv = styled.div``;
+const StyledEmptyDiv = styled.div``;
 const StyledContentDiv = styled.div`
   padding: 2rem 0;
   margin: 0 auto;
   width: 90%;
+  max-width: 1200px;
 `;
 
 const PageWrapper = ({ children }) => (
   <StyledPageWrapper>
-    <StyledEmpyDiv />
+    <StyledEmptyDiv />
     <StyledContentDiv>{children}</StyledContentDiv>
   </StyledPageWrapper>
 );
 
 PageWrapper.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 export default PageWrapper;

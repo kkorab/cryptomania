@@ -11,7 +11,7 @@ const StyledListItem = styled.li`
 const MenuItem = ({ children }) => <StyledListItem>{children}</StyledListItem>;
 
 MenuItem.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 export default MenuItem;

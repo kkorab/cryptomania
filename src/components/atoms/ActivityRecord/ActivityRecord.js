@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import PropTypes from 'prop-types';
 
 const StyledRecord = styled.div`
   padding: 0.5rem 0.5rem;
@@ -11,6 +12,7 @@ const StyledRecord = styled.div`
 
   & svg {
     font-size: 2rem;
+    color: ${({ theme }) => theme.fontColors.grey};
   }
   &:nth-of-type(2n) {
     background: rgba(245, 245, 245, 1);
@@ -52,21 +54,42 @@ const StyledTransactionDollarsValue = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.xs};
 `;
 
-const ActivityRecord = () => (
-  <StyledRecord>
-    <StyledCurrencySymbol />
-    <StyledTransactionDataWrapper>
-      <StyledTransactionDate>18.07.2020, 20:06:12</StyledTransactionDate>
-      <StyledTransactionNumber>
-        0x2499em12xx0248461dd33491
-      </StyledTransactionNumber>
-    </StyledTransactionDataWrapper>
-    <StyledTransactionValueWrapper>
-      <StyledTransactionValue>+0,5 BTC</StyledTransactionValue>
-      <StyledTransactionDollarsValue>$5,791.45</StyledTransactionDollarsValue>
-    </StyledTransactionValueWrapper>
-    <MoreVertIcon />
-  </StyledRecord>
-);
+const StyledButtonOptions = styled.button`
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+`;
+
+const ActivityRecord = ({ transaction }) => {
+  const { currency, date, transactionID, transactionValue } = transaction;
+  return (
+    <StyledRecord>
+      <StyledCurrencySymbol />
+      <StyledTransactionDataWrapper>
+        <StyledTransactionDate>{date}</StyledTransactionDate>
+        <StyledTransactionNumber>{transactionID}</StyledTransactionNumber>
+      </StyledTransactionDataWrapper>
+      <StyledTransactionValueWrapper>
+        <StyledTransactionValue>
+          +{transactionValue} {currency}
+        </StyledTransactionValue>
+        <StyledTransactionDollarsValue>$5,791.45</StyledTransactionDollarsValue>
+      </StyledTransactionValueWrapper>
+      <StyledButtonOptions>
+        <MoreVertIcon />
+      </StyledButtonOptions>
+    </StyledRecord>
+  );
+};
+
+ActivityRecord.propTypes = {
+  transaction: PropTypes.shape({
+    currency: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    transactionID: PropTypes.string.isRequired,
+    transactionValue: PropTypes.number.isRequired,
+  }).isRequired,
+};
 
 export default ActivityRecord;

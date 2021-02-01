@@ -30,18 +30,15 @@ const StyledWrapper = styled.div`
   z-index: 2;
 `;
 
-const PlainCard = ({ children, fullHeight }) => {
-  console.log(fullHeight);
-  return (
-    <StyledCard fullHeight={fullHeight}>
-      <StyledWrapper fullHeight={fullHeight}>{children}</StyledWrapper>
-    </StyledCard>
-  );
-};
+const PlainCard = ({ children, fullHeight }) => (
+  <StyledCard fullHeight={fullHeight}>
+    <StyledWrapper fullHeight={fullHeight}>{children}</StyledWrapper>
+  </StyledCard>
+);
 
 PlainCard.propTypes = {
   fullHeight: PropTypes.bool,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
 };
 
 PlainCard.defaultProps = {

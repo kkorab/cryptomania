@@ -1,10 +1,11 @@
-import { PageWrapper } from 'components/atoms';
 import React from 'react';
+import { PageHeadline } from 'components/atoms';
+import { WalletsGrid } from 'templates';
 
 const Wallets = () => (
-  <PageWrapper>
-    <h1>Hello from Wallets</h1>
-  </PageWrapper>
+  <WalletsGrid>
+    <PageHeadline style={{ border: '1px solid red' }}>Statistics</PageHeadline>
+  </WalletsGrid>
 );
 
 export default Wallets;

@@ -5,6 +5,7 @@ import MenuItem from './MenuItem/MenuItem';
 import PageWrapper from './PageWrapper/PageWrapper';
 import Logo from './Logo/Logo';
 import PlainCard from './PlainCard/PlainCard';
+import PageHeadline from './PageHeadline/PageHeadline';
 
 export {
   ActivityRecord,
@@ -13,5 +14,6 @@ export {
   MenuItem,
   PageWrapper,
   Logo,
+  PageHeadline,
   PlainCard,
 };

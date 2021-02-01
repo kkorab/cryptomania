@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
 const StyledCard = styled.div`
   margin: 2rem 0;
-  width: 380px;
+  width: 400px;
   height: 200px;
   border-radius: ${({ theme }) => theme.borderRadius.regular};
   color: ${({ theme }) => theme.fontColors.white};

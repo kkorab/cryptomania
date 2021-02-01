@@ -1,9 +1,9 @@
-import { PageWrapper } from 'components/atoms';
 import React from 'react';
+import { PageHeadline, PageWrapper } from 'components/atoms';
 
 const Exchange = () => (
   <PageWrapper>
-    <h1>Hello from Exchange</h1>
+    <PageHeadline>Exchange</PageHeadline>
   </PageWrapper>
 );
 
