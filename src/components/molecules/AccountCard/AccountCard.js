@@ -48,18 +48,20 @@ const StyledMoreOptions = styled.button`
 
 const AccountCard = () => (
   <PlainCard>
-    <StyledHeadline>Your ballance</StyledHeadline>
-    <StyledTextWrapper>
-      <StyledWalletOwnedValue>$2,814.27</StyledWalletOwnedValue>
-      <StyledSubheadline> Available</StyledSubheadline>
-    </StyledTextWrapper>
-    <StyledButtonsWrapper>
-      <Button thin>Deposit</Button>
-      <Button thin>Withdraw</Button>
-    </StyledButtonsWrapper>
-    <StyledMoreOptions>
-      <MoreVertIcon />
-    </StyledMoreOptions>
+    <>
+      <StyledHeadline>Your ballance</StyledHeadline>
+      <StyledTextWrapper>
+        <StyledWalletOwnedValue>$2,814.27</StyledWalletOwnedValue>
+        <StyledSubheadline> Available</StyledSubheadline>
+      </StyledTextWrapper>
+      <StyledButtonsWrapper>
+        <Button thin>Deposit</Button>
+        <Button thin>Withdraw</Button>
+      </StyledButtonsWrapper>
+      <StyledMoreOptions>
+        <MoreVertIcon />
+      </StyledMoreOptions>
+    </>
   </PlainCard>
 );
 

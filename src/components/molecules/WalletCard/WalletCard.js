@@ -5,6 +5,7 @@ import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import { showUp } from 'animations';
 import PropTypes from 'prop-types';
+import { currencies } from 'data';
 
 const StyledCard = styled.div`
   margin: 2rem 0;
@@ -114,7 +115,9 @@ const StyledCurrencyLogo = styled.img`
 `;
 
 const WalletCard = ({ data }) => {
-  const { currency, fullName, ownedValue, colors, price, logo } = data;
+  const { currency, ownedValue } = data;
+  const currencyData = currencies.find(el => el.currency === currency);
+  const { colors, price, fullName, logo } = currencyData;
   const dollarsValue = ownedValue * price;
   const formattedValue = new Intl.NumberFormat().format(dollarsValue);
   return (
@@ -152,11 +155,7 @@ const WalletCard = ({ data }) => {
 WalletCard.propTypes = {
   data: PropTypes.shape({
     currency: PropTypes.string.isRequired,
-    fullName: PropTypes.string.isRequired,
     ownedValue: PropTypes.number.isRequired,
-    price: PropTypes.number.isRequired,
-    colors: PropTypes.arrayOf(PropTypes.string).isRequired,
-    logo: PropTypes.string.isRequired,
   }).isRequired,
 };
 

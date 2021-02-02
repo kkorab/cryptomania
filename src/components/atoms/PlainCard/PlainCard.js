@@ -5,7 +5,7 @@ import { showUp } from 'animations';
 
 const StyledCard = styled.div`
   margin: 2rem 0;
-  width: 100%;
+  width: ${({ currencyForm }) => (currencyForm ? '45%' : '100%')};
   height: ${({ fullHeight }) => (fullHeight ? '380px' : '200px')};
   background: ${({ theme }) => theme.bgColors.secondary};
   border-radius: ${({ theme }) => theme.borderRadius.regular};
@@ -30,18 +30,20 @@ const StyledWrapper = styled.div`
   z-index: 2;
 `;
 
-const PlainCard = ({ children, fullHeight }) => (
-  <StyledCard fullHeight={fullHeight}>
+const PlainCard = ({ children, fullHeight, currencyForm }) => (
+  <StyledCard currencyForm={currencyForm} fullHeight={fullHeight}>
     <StyledWrapper fullHeight={fullHeight}>{children}</StyledWrapper>
   </StyledCard>
 );
 
 PlainCard.propTypes = {
+  currencyForm: PropTypes.bool,
   fullHeight: PropTypes.bool,
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 PlainCard.defaultProps = {
+  currencyForm: false,
   fullHeight: false,
 };
 

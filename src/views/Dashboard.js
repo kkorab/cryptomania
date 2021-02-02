@@ -11,7 +11,6 @@ const StyledAccount = styled.div``;
 
 const Dashboard = () => {
   const { wallets } = data;
-  console.log(data.transactions[0]);
   return (
     <DashboardGrid>
       <StyledWallets>

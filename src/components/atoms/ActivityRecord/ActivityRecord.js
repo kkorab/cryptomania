@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import PropTypes from 'prop-types';
+import { currencies } from 'data';
 
 const StyledRecord = styled.div`
   padding: 0.5rem 0.5rem;
@@ -19,11 +20,22 @@ const StyledRecord = styled.div`
   }
 `;
 
-const StyledCurrencySymbol = styled.div`
+const StyledCurrencySymbolWrapper = styled.div`
   width: 30px;
   height: 30px;
-  background: gold;
+  background: ${({ colors }) => `linear-gradient(
+    225deg,
+    ${colors[0]} 0%,
+    ${colors[1]} 100%
+  )`};
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const StyledCurrencySymbol = styled.img`
+  width: 50%;
 `;
 
 const StyledTransactionDataWrapper = styled.div`
@@ -63,18 +75,25 @@ const StyledButtonOptions = styled.button`
 
 const ActivityRecord = ({ transaction }) => {
   const { currency, date, transactionID, transactionValue } = transaction;
+  const currencyData = currencies.find(el => el.currency === currency);
+  const { colors, logo, price } = currencyData;
+
   return (
     <StyledRecord>
-      <StyledCurrencySymbol />
+      <StyledCurrencySymbolWrapper colors={colors}>
+        <StyledCurrencySymbol src={logo} />
+      </StyledCurrencySymbolWrapper>
       <StyledTransactionDataWrapper>
         <StyledTransactionDate>{date}</StyledTransactionDate>
         <StyledTransactionNumber>{transactionID}</StyledTransactionNumber>
       </StyledTransactionDataWrapper>
       <StyledTransactionValueWrapper>
         <StyledTransactionValue>
-          +{transactionValue} {currency}
+          +{transactionValue.toFixed(2)} {currency}
         </StyledTransactionValue>
-        <StyledTransactionDollarsValue>$5,791.45</StyledTransactionDollarsValue>
+        <StyledTransactionDollarsValue>
+          ${(transactionValue * price).toFixed(2)}
+        </StyledTransactionDollarsValue>
       </StyledTransactionValueWrapper>
       <StyledButtonOptions>
         <MoreVertIcon />

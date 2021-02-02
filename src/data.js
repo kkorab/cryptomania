@@ -10,7 +10,7 @@ const addZero = number => {
 
 const DateGenerator = () => {
   const newDate = new Date();
-  const day = addZero(newDate.getDate());
+  const day = addZero(Math.floor(Math.random() * 28 + 1));
   const month = addZero(newDate.getMonth() + 1);
   const year = newDate.getFullYear();
   const hours = addZero(newDate.getHours());
@@ -21,49 +21,43 @@ const DateGenerator = () => {
   return fullDate;
 };
 
-const currencies = {
-  BTC: {
+export const currencies = [
+  {
+    currency: 'BTC',
+    fullName: 'Bitcoin',
     colors: ['rgba(253, 143, 164, 0.85)', 'rgba(255, 198, 106, 0.95)'],
     price: 33577.8,
     logo: btcLogo,
   },
-  ETH: {
+  {
+    currency: 'ETH',
+    fullName: 'Ethereum',
     colors: ['rgba(135, 84, 255, 0.85)', 'rgba(23, 182, 239, 0.95)'],
     price: 1354.1,
     logo: ethereumLogo,
   },
-  LTC: {
+  {
+    currency: 'LTC',
+    fullName: 'Litecoin',
     colors: ['rgba(35,226,214, 0.85)', 'rgba(63, 154, 247, 0.95)'],
     price: 131.41,
     logo: litecoinLogo,
   },
-};
+];
 
 const data = {
   wallets: [
     {
       currency: 'BTC',
-      fullName: 'Bitcoin',
       ownedValue: 3.746,
-      price: currencies.BTC.price,
-      colors: currencies.BTC.colors,
-      logo: btcLogo,
     },
     {
       currency: 'ETH',
-      fullName: 'Ethereum',
       ownedValue: 542.32,
-      price: currencies.ETH.price,
-      colors: currencies.ETH.colors,
-      logo: ethereumLogo,
     },
     {
       currency: 'LTC',
-      fullName: 'Litecoin',
       ownedValue: 317.0,
-      price: currencies.LTC.price,
-      colors: currencies.LTC.colors,
-      logo: litecoinLogo,
     },
   ],
   transactions: [
@@ -71,7 +65,43 @@ const data = {
       currency: 'BTC',
       date: DateGenerator(),
       transactionID: uuidv4(),
-      transactionValue: Math.random().toFixed(2),
+      transactionValue: Number(Math.random().toFixed(2)),
+    },
+    {
+      currency: 'ETH',
+      date: DateGenerator(),
+      transactionID: uuidv4(),
+      transactionValue: Number(Math.random().toFixed(2)),
+    },
+    {
+      currency: 'ETH',
+      date: DateGenerator(),
+      transactionID: uuidv4(),
+      transactionValue: Number(Math.random().toFixed(2)),
+    },
+    {
+      currency: 'LTC',
+      date: DateGenerator(),
+      transactionID: uuidv4(),
+      transactionValue: Number(Math.random().toFixed(2)),
+    },
+    {
+      currency: 'BTC',
+      date: DateGenerator(),
+      transactionID: uuidv4(),
+      transactionValue: Number(Math.random().toFixed(2)),
+    },
+    {
+      currency: 'LTC',
+      date: DateGenerator(),
+      transactionID: uuidv4(),
+      transactionValue: Number(Math.random().toFixed(2)),
+    },
+    {
+      currency: 'BTC',
+      date: DateGenerator(),
+      transactionID: uuidv4(),
+      transactionValue: Number(Math.random().toFixed(2)),
     },
   ],
 };

@@ -9,16 +9,17 @@ const StyledActivityDate = styled.p`
 
 const LatestActivity = () => {
   const [transactionsData] = useState(data.transactions);
-  console.log(transactionsData);
   return (
     <PlainCard fullHeight>
-      <StyledActivityDate>Jul 2020</StyledActivityDate>
-      {transactionsData.map(transaction => (
-        <ActivityRecord
-          key={transaction.transactionID}
-          transaction={transaction}
-        />
-      ))}
+      <>
+        <StyledActivityDate>Jul 2020</StyledActivityDate>
+        {transactionsData.map(transaction => (
+          <ActivityRecord
+            key={transaction.transactionID}
+            transaction={transaction}
+          />
+        ))}
+      </>
     </PlainCard>
   );
 };
