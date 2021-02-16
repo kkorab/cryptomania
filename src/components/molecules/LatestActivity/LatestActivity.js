@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
+import { PaymentRecord, PlainCard } from 'components/atoms';
 import styled from 'styled-components';
-import { ActivityRecord, PlainCard } from 'components/atoms';
 import data from 'data';
+import PropTypes from 'prop-types';
 
 const StyledActivityDate = styled.p`
   padding-bottom: 1rem;
 `;
 
-const LatestActivity = () => {
-  const [transactionsData] = useState(data.transactions);
+const LatestActivity = ({ payments }) => {
+  const { transactions } = data;
+  const [transactionsData] = useState(transactions);
   return (
-    <PlainCard fullHeight>
+    <PlainCard fullHeight payments={payments}>
       <>
         <StyledActivityDate>Jul 2020</StyledActivityDate>
         {transactionsData.map(transaction => (
-          <ActivityRecord
+          <PaymentRecord
             key={transaction.transactionID}
             transaction={transaction}
           />
@@ -22,6 +24,14 @@ const LatestActivity = () => {
       </>
     </PlainCard>
   );
+};
+
+LatestActivity.propTypes = {
+  payments: PropTypes.bool,
+};
+
+LatestActivity.defaultProps = {
+  payments: false,
 };
 
 export default LatestActivity;

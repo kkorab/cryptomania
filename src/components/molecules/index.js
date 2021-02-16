@@ -4,6 +4,7 @@ import LoginForm from './LoginForm/LoginForm';
 import WalletCard from './WalletCard/WalletCard';
 import LatestActivity from './LatestActivity/LatestActivity';
 import PaymentsDetails from './PaymentsDetails/PaymentsDetails';
+import PaymentsFilters from './PaymentsFilters/PaymentsFilters';
 
 export {
   AccountCard,
@@ -12,4 +13,5 @@ export {
   LoginForm,
   WalletCard,
   PaymentsDetails,
+  PaymentsFilters,
 };

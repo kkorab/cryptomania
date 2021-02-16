@@ -25,6 +25,10 @@ const StyledItemDesc = styled.div`
   & svg {
     font-size: 2rem;
     margin-right: 0.5rem;
+    color: ${({ theme }) => theme.fontColors.grey};
+  }
+  & p {
+    color: ${({ theme }) => theme.fontColors.grey};
   }
 `;
 

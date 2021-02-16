@@ -79,37 +79,38 @@ const settingsIconStyle = {
 const Menu = () => {
   const [areSettingsOpened, setAreSettingOpened] = useState(false);
   let { pathname } = useLocation();
+  const { dashboard, payments, activities, wallets, exchange } = routes;
   return (
     pathname !== '/' && (
       <StyledNavBar>
         <Logo />
         <StyledMenu>
           <MenuItem>
-            <StyledNavLink to={routes.dashboard}>
+            <StyledNavLink to={dashboard}>
               <DashboardIcon />
               Dashboard
             </StyledNavLink>
           </MenuItem>
           <MenuItem>
-            <StyledNavLink to={routes.payments}>
+            <StyledNavLink to={payments}>
               <PaymentIcon />
               Payments
             </StyledNavLink>
           </MenuItem>
           <MenuItem>
-            <StyledNavLink to={routes.activities}>
+            <StyledNavLink to={activities}>
               <SyncAltIcon />
               Activities
             </StyledNavLink>
           </MenuItem>
           <MenuItem>
-            <StyledNavLink to={routes.wallets}>
+            <StyledNavLink to={wallets}>
               <AccountBalanceWalletIcon />
               Wallets
             </StyledNavLink>
           </MenuItem>
           <MenuItem>
-            <StyledNavLink to={routes.exchange}>
+            <StyledNavLink to={exchange}>
               <AutorenewIcon />
               Exchange
             </StyledNavLink>

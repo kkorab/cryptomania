@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import { showUp } from 'animations';
 
@@ -16,6 +16,12 @@ const StyledCard = styled.div`
   position: relative;
   overflow: hidden;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+
+  ${({ payments }) =>
+    payments &&
+    css`
+      height: 100% !important;
+    `}
 `;
 
 const StyledWrapper = styled.div`
@@ -30,8 +36,12 @@ const StyledWrapper = styled.div`
   z-index: 2;
 `;
 
-const PlainCard = ({ children, fullHeight, currencyForm }) => (
-  <StyledCard currencyForm={currencyForm} fullHeight={fullHeight}>
+const PlainCard = ({ children, fullHeight, currencyForm, payments }) => (
+  <StyledCard
+    currencyForm={currencyForm}
+    fullHeight={fullHeight}
+    payments={payments}
+  >
     <StyledWrapper fullHeight={fullHeight}>{children}</StyledWrapper>
   </StyledCard>
 );
@@ -40,11 +50,13 @@ PlainCard.propTypes = {
   currencyForm: PropTypes.bool,
   fullHeight: PropTypes.bool,
   children: PropTypes.element.isRequired,
+  payments: PropTypes.bool,
 };
 
 PlainCard.defaultProps = {
   currencyForm: false,
   fullHeight: false,
+  payments: false,
 };
 
 export default PlainCard;

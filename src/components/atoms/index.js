@@ -4,6 +4,7 @@ import MainWrapper from './MainWrapper/MainWrapper';
 import MenuItem from './MenuItem/MenuItem';
 import PageWrapper from './PageWrapper/PageWrapper';
 import Logo from './Logo/Logo';
+import PaymentRecord from './PaymentRecord/PaymentRecord';
 import PlainCard from './PlainCard/PlainCard';
 import PageHeadline from './PageHeadline/PageHeadline';
 import PaymentDetailsData from './PaymentDetailsData/PaymentDetailsData';
@@ -14,8 +15,9 @@ export {
   Button,
   MainWrapper,
   MenuItem,
-  PageWrapper,
   Logo,
+  PageWrapper,
+  PaymentRecord,
   PageHeadline,
   PaymentDetailsData,
   PaymentDetailsItems,

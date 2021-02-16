@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PlainCard } from 'components/atoms';
+import Select from '@material-ui/core/Select';
 
 const StyledSelectWrapper = styled.div`
   width: 100%;
@@ -8,15 +9,22 @@ const StyledSelectWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-const StyledSelect = styled.select`
-  width: 100%;
-`;
 
 const ExchangeCurrencyForm = () => (
   <PlainCard currencyForm>
     <StyledSelectWrapper>
       <p>from</p>
-      <StyledSelect />
+      <Select
+        style={{
+          width: '100%',
+        }}
+      >
+        <option>BTC</option>
+        <option>LTC</option>
+        <option>ETH</option>
+        <option>BTC</option>
+        <option>BTC</option>
+      </Select>
     </StyledSelectWrapper>
   </PlainCard>
 );

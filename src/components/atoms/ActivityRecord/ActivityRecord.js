@@ -1,114 +1,93 @@
 import React from 'react';
 import styled from 'styled-components';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import PropTypes from 'prop-types';
-import { currencies } from 'data';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 const StyledRecord = styled.div`
-  padding: 0.5rem 0.5rem;
+  padding: 1rem 0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  border-radius: 5px;
+  border-bottom: 1px solid ${({ theme }) => theme.bgColors.tertiary};
 
-  & svg {
-    font-size: 2rem;
-    color: ${({ theme }) => theme.fontColors.grey};
-  }
-  &:nth-of-type(2n) {
-    background: rgba(245, 245, 245, 1);
+  &:last-child {
+    border: none;
   }
 `;
 
-const StyledCurrencySymbolWrapper = styled.div`
+const StyledContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const StyledPriceWrapper = styled.div`
+  color: ${({ type }) => (type === 'deposit' ? 'green' : 'black')};
+`;
+
+const StyledIconWrapper = styled.div`
   width: 30px;
   height: 30px;
-  background: ${({ colors }) => `linear-gradient(
-    225deg,
-    ${colors[0]} 0%,
-    ${colors[1]} 100%
-  )`};
+  background: ${({ theme }) => theme.bgColors.tertiary};
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  & svg {
+    color: ${({ theme }) => theme.fontColors.primary};
+  }
 `;
 
-const StyledCurrencySymbol = styled.img`
-  width: 50%;
+const StyledTextWrapper = styled.div`
+  padding-left: 3rem;
+
+  & p:first-child {
+    color: ${({ theme }) => theme.fontColors.primary};
+  }
 `;
 
-const StyledTransactionDataWrapper = styled.div`
-  width: 50%;
-`;
-
-const StyledTransactionDate = styled.h4`
-  color: black;
-`;
-
-const StyledTransactionNumber = styled.p`
-  color: ${({ theme }) => theme.fontColors.grey};
+const StyledDate = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.xs};
 `;
 
-const StyledTransactionValueWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-const StyledTransactionValue = styled.h3`
-  font-size: ${({ theme }) => theme.fontSizes.s};
-`;
-
-const StyledTransactionDollarsValue = styled.div`
-  font-size: ${({ theme }) => theme.fontSizes.xs};
-`;
-
-const StyledButtonOptions = styled.button`
-  border: none;
-  background: none;
-  outline: none;
-  cursor: pointer;
-`;
-
-const ActivityRecord = ({ transaction }) => {
-  const { currency, date, transactionID, transactionValue } = transaction;
-  const currencyData = currencies.find(el => el.currency === currency);
-  const { colors, logo, price } = currencyData;
-
+const ActivityRecord = ({ data }) => {
+  const { type, content, date, value, currency } = data;
   return (
     <StyledRecord>
-      <StyledCurrencySymbolWrapper colors={colors}>
-        <StyledCurrencySymbol src={logo} />
-      </StyledCurrencySymbolWrapper>
-      <StyledTransactionDataWrapper>
-        <StyledTransactionDate>{date}</StyledTransactionDate>
-        <StyledTransactionNumber>{transactionID}</StyledTransactionNumber>
-      </StyledTransactionDataWrapper>
-      <StyledTransactionValueWrapper>
-        <StyledTransactionValue>
-          +{transactionValue.toFixed(2)} {currency}
-        </StyledTransactionValue>
-        <StyledTransactionDollarsValue>
-          ${(transactionValue * price).toFixed(2)}
-        </StyledTransactionDollarsValue>
-      </StyledTransactionValueWrapper>
-      <StyledButtonOptions>
-        <MoreVertIcon />
-      </StyledButtonOptions>
+      <StyledContent>
+        <StyledIconWrapper>
+          {type === 'subscription' && <AttachMoneyIcon />}
+          {type === 'deposit' && <ArrowDownwardIcon />}
+          {type === 'fee' && <ArrowUpwardIcon />}
+        </StyledIconWrapper>
+        <StyledTextWrapper>
+          <p>{content} </p>
+          <StyledDate>{date}</StyledDate>
+        </StyledTextWrapper>
+      </StyledContent>
+      <StyledPriceWrapper type={type}>
+        <p>
+          {type === 'deposit' ? '+ ' : '- '}
+          {Number(value).toFixed(2)} {currency}
+        </p>
+      </StyledPriceWrapper>
     </StyledRecord>
   );
 };
 
 ActivityRecord.propTypes = {
-  transaction: PropTypes.shape({
-    currency: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    transactionID: PropTypes.string.isRequired,
-    transactionValue: PropTypes.number.isRequired,
-  }).isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      type: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired,
+      currency: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default ActivityRecord;
