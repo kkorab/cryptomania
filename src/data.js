@@ -3,6 +3,15 @@ import btcLogo from 'assets/svgs/bitcoin-logo.svg';
 import ethereumLogo from 'assets/svgs/ethereum.svg';
 import litecoinLogo from 'assets/svgs/litecoin.svg';
 
+// settings icons
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import SettingsIcon from '@material-ui/icons/Settings';
+import TodayIcon from '@material-ui/icons/Today';
+import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
+import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
+import LockIcon from '@material-ui/icons/Lock';
+import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
+
 const addZero = number => {
   const fixedNumber = number < 10 ? `0${number}` : number;
   return fixedNumber;
@@ -156,6 +165,36 @@ const data = {
       date: 'November 20, 2020 4:20 PM',
       value: 12,
       currency: 'USD',
+    },
+  ],
+  settings: [
+    {
+      headline: 'Personal details',
+      icon: AccountCircleIcon,
+    },
+    {
+      headline: 'Account settings',
+      icon: SettingsIcon,
+    },
+    {
+      headline: 'Subscriptions and 1-tap payments',
+      icon: TodayIcon,
+    },
+    {
+      headline: 'Marketing preferences',
+      icon: NotificationsActiveIcon,
+    },
+    {
+      headline: 'Referrals program',
+      icon: SupervisorAccountIcon,
+    },
+    {
+      headline: 'Security',
+      icon: LockIcon,
+    },
+    {
+      headline: 'Verification',
+      icon: VerifiedUserIcon,
     },
   ],
 };

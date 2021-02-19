@@ -10,30 +10,43 @@ import {
   Exchange,
   Home,
   Payments,
+  Settings,
   Wallets,
 } from 'views';
 import routes from 'routes';
 import { Menu, UserBar } from 'components/organisms';
 
-const App = () => (
-  <ThemeProvider theme={mainTheme}>
-    <>
-      <GlobalStyle />
-      <BrowserRouter>
-        <UserBar />
-        <Menu />
-        <Switch>
-          <Route path={routes.dashboard} component={Dashboard} />
-          <Route path={routes.payments} component={Payments} />
-          <Route path={routes.activities} component={Activities} />
-          <Route path={routes.wallets} component={Wallets} />
-          <Route path={routes.exchange} component={Exchange} />
-          <Route exact path={routes.home} component={Home} />
-          <Route component={ErrorPage} />
-        </Switch>
-      </BrowserRouter>
-    </>
-  </ThemeProvider>
-);
+const App = () => {
+  const {
+    activities,
+    dashboard,
+    home,
+    exchange,
+    payments,
+    wallets,
+    settings,
+  } = routes;
+  return (
+    <ThemeProvider theme={mainTheme}>
+      <>
+        <GlobalStyle />
+        <BrowserRouter>
+          <UserBar />
+          <Menu />
+          <Switch>
+            <Route path={dashboard} component={Dashboard} />
+            <Route path={payments} component={Payments} />
+            <Route path={activities} component={Activities} />
+            <Route path={wallets} component={Wallets} />
+            <Route path={exchange} component={Exchange} />
+            <Route path={settings} component={Settings} />
+            <Route exact path={home} component={Home} />
+            <Route component={ErrorPage} />
+          </Switch>
+        </BrowserRouter>
+      </>
+    </ThemeProvider>
+  );
+};
 
 export default App;

@@ -9,6 +9,7 @@ import PlainCard from './PlainCard/PlainCard';
 import PageHeadline from './PageHeadline/PageHeadline';
 import PaymentDetailsData from './PaymentDetailsData/PaymentDetailsData';
 import PaymentDetailsItems from './PaymentDetailsItems/PaymentDetailsItems';
+import SettingsRow from './SettingsRow/SettingsRow';
 
 export {
   ActivityRecord,
@@ -22,4 +23,5 @@ export {
   PaymentDetailsData,
   PaymentDetailsItems,
   PlainCard,
+  SettingsRow,
 };

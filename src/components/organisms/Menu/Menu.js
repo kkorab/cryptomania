@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import routes from 'routes';
 import { useLocation } from 'react-router';
@@ -70,6 +70,13 @@ const StyledNavLink = styled(NavLink)`
     color: ${({ theme }) => theme.btnColors.primary};
   }
 `;
+const StyledSettingsNavLink = styled(StyledNavLink)`
+  display: flex;
+  justify-content: center;
+  & svg {
+    margin: 0 auto;
+  }
+`;
 
 const settingsIconStyle = {
   fontSize: '2rem',
@@ -77,9 +84,15 @@ const settingsIconStyle = {
 };
 
 const Menu = () => {
-  const [areSettingsOpened, setAreSettingOpened] = useState(false);
   let { pathname } = useLocation();
-  const { dashboard, payments, activities, wallets, exchange } = routes;
+  const {
+    dashboard,
+    payments,
+    activities,
+    wallets,
+    exchange,
+    settings,
+  } = routes;
   return (
     pathname !== '/' && (
       <StyledNavBar>
@@ -116,11 +129,10 @@ const Menu = () => {
             </StyledNavLink>
           </MenuItem>
         </StyledMenu>
-        <StyledSettings
-          onClick={() => setAreSettingOpened(!areSettingsOpened)}
-          opened={areSettingsOpened}
-        >
-          <SettingsIcon style={settingsIconStyle} />
+        <StyledSettings>
+          <StyledSettingsNavLink to={settings}>
+            <SettingsIcon style={settingsIconStyle} />
+          </StyledSettingsNavLink>
         </StyledSettings>
       </StyledNavBar>
     )

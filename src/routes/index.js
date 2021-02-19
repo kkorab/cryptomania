@@ -5,6 +5,7 @@ const routes = {
   activities: '/activities',
   wallets: '/wallets',
   exchange: '/exchange',
+  settings: '/settings',
 };
 
 export default routes;
