@@ -16,10 +16,12 @@ const StyledContentDiv = styled.div`
 `;
 
 const PageWrapper = ({ children }) => (
-  <StyledPageWrapper>
-    <StyledEmptyDiv />
-    <StyledContentDiv>{children}</StyledContentDiv>
-  </StyledPageWrapper>
+  <>
+    <StyledPageWrapper>
+      <StyledEmptyDiv />
+      <StyledContentDiv>{children}</StyledContentDiv>
+    </StyledPageWrapper>
+  </>
 );
 
 PageWrapper.propTypes = {

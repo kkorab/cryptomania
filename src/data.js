@@ -167,36 +167,56 @@ const data = {
       currency: 'USD',
     },
   ],
-  settings: [
-    {
-      headline: 'Personal details',
-      icon: AccountCircleIcon,
-    },
-    {
-      headline: 'Account settings',
-      icon: SettingsIcon,
-    },
-    {
-      headline: 'Subscriptions and 1-tap payments',
-      icon: TodayIcon,
-    },
-    {
-      headline: 'Marketing preferences',
-      icon: NotificationsActiveIcon,
-    },
-    {
-      headline: 'Referrals program',
-      icon: SupervisorAccountIcon,
-    },
-    {
-      headline: 'Security',
-      icon: LockIcon,
-    },
-    {
-      headline: 'Verification',
-      icon: VerifiedUserIcon,
-    },
-  ],
+  settings: {
+    menu: [
+      {
+        headline: 'Personal details',
+        icon: AccountCircleIcon,
+      },
+      {
+        headline: 'Account settings',
+        icon: SettingsIcon,
+      },
+      {
+        headline: 'Subscriptions and 1-tap payments',
+        icon: TodayIcon,
+      },
+      {
+        headline: 'Marketing preferences',
+        icon: NotificationsActiveIcon,
+      },
+      {
+        headline: 'Referrals program',
+        icon: SupervisorAccountIcon,
+      },
+      {
+        headline: 'Security',
+        icon: LockIcon,
+      },
+      {
+        headline: 'Verification',
+        icon: VerifiedUserIcon,
+      },
+    ],
+    personalDetails: [
+      {
+        headline: 'Jan Kowalski',
+        content: '9244201',
+      },
+      {
+        headline: 'Address',
+        content: 'Prosta 10, Warszawa 00001 Poland',
+      },
+      {
+        headline: 'Phone number',
+        content: '+48 789 456 123',
+      },
+      {
+        headline: 'Email address',
+        content: 'jankowalski@gmail.com',
+      },
+    ],
+  },
 };
 
 export default data;

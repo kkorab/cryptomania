@@ -10,6 +10,8 @@ import PageHeadline from './PageHeadline/PageHeadline';
 import PaymentDetailsData from './PaymentDetailsData/PaymentDetailsData';
 import PaymentDetailsItems from './PaymentDetailsItems/PaymentDetailsItems';
 import SettingsRow from './SettingsRow/SettingsRow';
+import SettingsRowContent from './SettingsRowContent/SettingsRowContent';
+import SettingsRowContentItem from './SettingsRowContentItem/SettingsRowContentItem';
 
 export {
   ActivityRecord,
@@ -17,11 +19,13 @@ export {
   MainWrapper,
   MenuItem,
   Logo,
-  PageWrapper,
-  PaymentRecord,
   PageHeadline,
+  PageWrapper,
   PaymentDetailsData,
   PaymentDetailsItems,
+  PaymentRecord,
   PlainCard,
   SettingsRow,
+  SettingsRowContent,
+  SettingsRowContentItem,
 };

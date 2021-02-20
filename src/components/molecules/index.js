@@ -5,7 +5,7 @@ import WalletCard from './WalletCard/WalletCard';
 import LatestActivity from './LatestActivity/LatestActivity';
 import PaymentsDetails from './PaymentsDetails/PaymentsDetails';
 import PaymentsFilters from './PaymentsFilters/PaymentsFilters';
-import SettingsMenu from './SettingsMenu/SettingsMenu';
+import SettingsItem from './SettingsItem/SettingsItem';
 
 export {
   AccountCard,
@@ -15,5 +15,5 @@ export {
   WalletCard,
   PaymentsDetails,
   PaymentsFilters,
-  SettingsMenu,
+  SettingsItem,
 };

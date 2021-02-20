@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PageHeadline, PageWrapper } from 'components/atoms';
-import { SettingsMenu } from 'components/molecules';
+import { SettingsMenu } from 'components/organisms';
 
 const StyledWrapper = styled.div``;
 
