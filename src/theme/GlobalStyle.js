@@ -19,6 +19,16 @@ body {
     background: ${({ theme }) => theme.bgColors.tertiary};
     font-size: 1.6rem;
 }
+
+.display-info {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .display-info {
+        display: flex;
+    }
+}
 `;
 
 export default GlobalStyle;

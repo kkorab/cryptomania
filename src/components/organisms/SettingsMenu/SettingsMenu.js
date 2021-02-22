@@ -1,21 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import data from 'data';
-import { SettingsItem } from 'components/molecules';
+import {
+  AccountSettings,
+  MarketingPref,
+  PersonalDetails,
+  ReferralsProgram,
+  Security,
+  Subscriptions,
+  Verification,
+} from 'components/molecules';
 
 const StyledSettingsWrapper = styled.div`
   margin-top: 20px;
 `;
 
-const SettingsMenu = () => {
-  const [settings] = useState(data.settings.menu);
-  return (
-    <StyledSettingsWrapper>
-      {settings.map(el => (
-        <SettingsItem data={el} key={el.headline} />
-      ))}
-    </StyledSettingsWrapper>
-  );
-};
+const SettingsMenu = () => (
+  <StyledSettingsWrapper>
+    <PersonalDetails />
+    <AccountSettings />
+    <Subscriptions />
+    <MarketingPref />
+    <ReferralsProgram />
+    <Security />
+    <Verification />
+  </StyledSettingsWrapper>
+);
 
 export default SettingsMenu;

@@ -15,6 +15,7 @@ import {
 } from 'views';
 import routes from 'routes';
 import { Menu, UserBar } from 'components/organisms';
+import MobileInfo from 'MobileInfo';
 
 const App = () => {
   const {
@@ -27,25 +28,28 @@ const App = () => {
     settings,
   } = routes;
   return (
-    <ThemeProvider theme={mainTheme}>
-      <>
-        <GlobalStyle />
-        <BrowserRouter>
-          <UserBar />
-          <Menu />
-          <Switch>
-            <Route path={dashboard} component={Dashboard} />
-            <Route path={payments} component={Payments} />
-            <Route path={activities} component={Activities} />
-            <Route path={wallets} component={Wallets} />
-            <Route path={exchange} component={Exchange} />
-            <Route path={settings} component={Settings} />
-            <Route exact path={home} component={Home} />
-            <Route component={ErrorPage} />
-          </Switch>
-        </BrowserRouter>
-      </>
-    </ThemeProvider>
+    <>
+      <MobileInfo />
+      <ThemeProvider theme={mainTheme}>
+        <>
+          <GlobalStyle />
+          <BrowserRouter>
+            <UserBar />
+            <Menu />
+            <Switch>
+              <Route path={dashboard} component={Dashboard} />
+              <Route path={payments} component={Payments} />
+              <Route path={activities} component={Activities} />
+              <Route path={wallets} component={Wallets} />
+              <Route path={exchange} component={Exchange} />
+              <Route path={settings} component={Settings} />
+              <Route exact path={home} component={Home} />
+              <Route component={ErrorPage} />
+            </Switch>
+          </BrowserRouter>
+        </>
+      </ThemeProvider>
+    </>
   );
 };
 

@@ -9,9 +9,9 @@ import PlainCard from './PlainCard/PlainCard';
 import PageHeadline from './PageHeadline/PageHeadline';
 import PaymentDetailsData from './PaymentDetailsData/PaymentDetailsData';
 import PaymentDetailsItems from './PaymentDetailsItems/PaymentDetailsItems';
-import SettingsRow from './SettingsRow/SettingsRow';
-import SettingsRowContent from './SettingsRowContent/SettingsRowContent';
-import SettingsRowContentItem from './SettingsRowContentItem/SettingsRowContentItem';
+import SettingsItem from './SettingsComponents/SettingsItem/SettingsItem';
+import SettingsItemContentWrapper from './SettingsComponents/SettingsItemContentWrapper/SettingsItemContentWrapper';
+import SettingsItemContentRow from './SettingsComponents/SettingsItemContentRow/SettingsItemContentRow';
 
 export {
   ActivityRecord,
@@ -25,7 +25,7 @@ export {
   PaymentDetailsItems,
   PaymentRecord,
   PlainCard,
-  SettingsRow,
-  SettingsRowContent,
-  SettingsRowContentItem,
+  SettingsItem,
+  SettingsItemContentWrapper,
+  SettingsItemContentRow,
 };

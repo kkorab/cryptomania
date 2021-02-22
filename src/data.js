@@ -216,6 +216,71 @@ const data = {
         content: 'jankowalski@gmail.com',
       },
     ],
+    accountSettings: [
+      {
+        headline: 'Language',
+        content: 'English',
+      },
+      {
+        headline: 'Loyalty program',
+        content: 'Inactive',
+      },
+      {
+        headline: 'Account status',
+        content: 'Active',
+      },
+    ],
+    marketingPreferences: [
+      {
+        headline: 'Email offers',
+        content:
+          'Get marketing messages, promotions and exclusive offers in your inbox.',
+      },
+      {
+        headline: 'Push notification offers',
+        content: `Get marketing messages, promotions and exclusive offers on your mobile device. If switched off, you'll still receive notification about your account status and transactions.`,
+      },
+      {
+        headline: 'SMS offers',
+        content: 'Get text messages about promotions and exclusive offers.',
+      },
+      {
+        headline: 'In-account offers',
+        content: `Get in-account offers that are tailored for you based on your account usage. If switched off you'll still get offers in your account, but they may not be relevant.`,
+      },
+      {
+        headline: 'Digital media offers',
+        content:
+          'We’ll use your data to send personalised ads about our products via our media partners including Google, Facebook, etc. full list here. We’ll also use your data to analyse trends in use and improve the way we target users across these platforms. If switched off, you’ll still see ads from us on these platforms, but these won’t be personalised.',
+      },
+      {
+        headline: 'Partner offers',
+        content: `Get offers from carefully selected Skrill partners. We'll not share your personal data, but will send you marketing messages on their behalf.`,
+      },
+    ],
+    security: [
+      {
+        headline: 'Password',
+      },
+      {
+        headline: 'Reset PIN',
+      },
+      {
+        headline: 'Authentication methods',
+      },
+      {
+        headline: 'Trusted devices',
+      },
+      {
+        headline: 'Trusted recipients and merchants',
+      },
+    ],
+    verification: [
+      {
+        headline: 'Account verification',
+        content: 'Your account is fully verified.',
+      },
+    ],
   },
 };
 
