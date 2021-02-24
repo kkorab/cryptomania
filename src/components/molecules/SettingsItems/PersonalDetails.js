@@ -13,7 +13,7 @@ const PersonalDetails = ({ isHidden, handleClick }) => (
     <SettingsItem data={data.settings.menu[0]} handleClick={handleClick} />
     <SettingsItemContentWrapper isHidden={isHidden}>
       {data.settings.personalDetails.map(el => (
-        <SettingsItemContentRow itemData={el} />
+        <SettingsItemContentRow key={el.headline} itemData={el} />
       ))}
     </SettingsItemContentWrapper>
   </>

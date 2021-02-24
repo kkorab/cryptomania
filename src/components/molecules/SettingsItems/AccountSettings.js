@@ -13,7 +13,7 @@ const AccountSettings = ({ isHidden, handleClick }) => (
     <SettingsItem data={data.settings.menu[1]} handleClick={handleClick} />
     <SettingsItemContentWrapper isHidden={isHidden}>
       {data.settings.accountSettings.map(el => (
-        <SettingsItemContentRow itemData={el} />
+        <SettingsItemContentRow key={el.headline} itemData={el} />
       ))}
     </SettingsItemContentWrapper>
   </>

@@ -13,7 +13,7 @@ const Verification = ({ isHidden, handleClick }) => (
     <SettingsItem data={data.settings.menu[6]} handleClick={handleClick} />
     <SettingsItemContentWrapper isHidden={isHidden}>
       {data.settings.verification.map(el => (
-        <SettingsItemContentRow itemData={el} />
+        <SettingsItemContentRow key={el.headline} itemData={el} />
       ))}
     </SettingsItemContentWrapper>
   </>

@@ -13,7 +13,7 @@ const MarketingPref = ({ isHidden, handleClick }) => (
     <SettingsItem data={data.settings.menu[3]} handleClick={handleClick} />
     <SettingsItemContentWrapper isHidden={isHidden}>
       {data.settings.marketingPreferences.map(el => (
-        <SettingsItemContentRow switchBtn itemData={el} />
+        <SettingsItemContentRow key={el.headline} switchBtn itemData={el} />
       ))}
     </SettingsItemContentWrapper>
   </>

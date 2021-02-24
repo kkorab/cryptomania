@@ -13,7 +13,7 @@ const Security = ({ isHidden, handleClick }) => (
     <SettingsItem data={data.settings.menu[5]} handleClick={handleClick} />
     <SettingsItemContentWrapper isHidden={isHidden}>
       {data.settings.security.map(el => (
-        <SettingsItemContentRow itemData={el} />
+        <SettingsItemContentRow key={el.headline} itemData={el} />
       ))}
     </SettingsItemContentWrapper>
   </>

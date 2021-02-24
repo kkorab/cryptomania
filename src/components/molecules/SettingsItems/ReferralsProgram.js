@@ -66,7 +66,7 @@ const ReferralsProgram = ({ isHidden, handleClick }) => (
       </StyledReferralsWrapper>
       <StyledInputWrapper>
         <input
-          disabled="true"
+          disabled
           type="text"
           value="https://account.cryptomania.com/signup?rid=94403489"
         />

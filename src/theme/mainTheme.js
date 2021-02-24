@@ -15,8 +15,10 @@ const mainTheme = {
     xl: '2.6rem',
     xxl: '3rem',
     xxxl: '3.5rem',
+    xxxxl: '4.5rem',
   },
   fontColors: {
+    lightGrey: '#B3B3B3',
     grey: '#918195',
     white: '#efefef',
     primary: '#613aea',
